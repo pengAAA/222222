@@ -1,0 +1,40 @@
+{
+    "shopList": [
+        {
+            "src": "../images/shopImg.png",
+            "name": "珠片绣订花SX-1126",
+            "dis_word": "3D重手工",
+            "more": "现货"
+        },
+        {
+            "src": "../images/longImg.png",
+            "name": "珠片绣订花SX-1126",
+            "dis_word": "3D重手工",
+            "more": "现货"
+        },
+        {
+            "src": "../images/longImg.png",
+            "name": "珠片绣订花SX-1126",
+            "dis_word": "3D重手工",
+            "more": "现货"
+        },
+        {
+            "src": "../images/shopImg.png",
+            "name": "珠片绣订花SX-1126",
+            "dis_word": "3D重手工",
+            "more": "现货"
+        },
+        {
+            "src": "../images/shopImg.png",
+            "name": "珠片绣订花SX-1126",
+            "dis_word": "3D重手工",
+            "more": "现货"
+        },
+        {
+            "src": "../images/shopImg.png",
+            "name": "珠片绣订花SX-1126",
+            "dis_word": "3D重手工",
+            "more": "现货"
+        }
+    ]
+}

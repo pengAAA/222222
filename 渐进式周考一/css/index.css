@@ -1,0 +1,254 @@
+html {
+  font-size: 100px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#wrap {
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: .1rem .15rem;
+  background-color: #bfb3a1;
+  box-sizing: border-box;
+  height: .55rem;
+}
+
+header .search-wrap {
+  width: 100%;
+  height: .36rem;
+  padding: 0 .28rem;
+  background-color: #fff;
+  display: flex;
+  line-height: .36rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+header .search-wrap .input-bar {
+  border: 0;
+  outline: none;
+  margin-left: .05rem;
+}
+
+header .search-wrap .icon-fangdajing {
+  display: block;
+}
+
+.main {
+  width: 100%;
+  height: calc(100vh - 1.2rem);
+  margin-top: 1.2rem;
+}
+
+.intel-search-wrap {
+  width: 100%;
+  padding: .1rem .15rem;
+  box-sizing: border-box;
+}
+
+.intel-search-wrap .intel-search-box {
+  width: 100%;
+  position: relative;
+  border: 1px solid #eee;
+  box-shadow: 0 5px 2px #eee;
+}
+
+.intel-search-wrap .intel-search-box .icon-search {
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.intel-search-wrap .intel-search-box .icon-search i {
+  display: block;
+  width: 62.5px;
+  height: 62.5px;
+  margin: 0 auto;
+  font-size: 30px;
+  line-height: 62.5px;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.intel-search-wrap .intel-search-box .icon-search h3 {
+  margin-top: .05rem;
+  font-size: .14rem;
+  color: 3000;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content {
+  width: 100%;
+  padding: .65rem .28rem 0.15rem;
+  box-sizing: border-box;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content .fun-list {
+  width: 100%;
+  display: flex;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content .fun-list .fun-item {
+  flex: 1;
+  margin-left: .1rem;
+  display: flex;
+  background-color: #f8f8f8;
+  height: .61rem;
+  padding: .15rem;
+  box-sizing: border-box;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content .fun-list .fun-item .icon-item {
+  margin-right: 5px;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content .fun-list .fun-item .icon-item img {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content .fun-list .fun-item .text .title {
+  color: #feaa30;
+  font-size: .16rem;
+  font-weight: 700;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content .fun-list .fun-item .text p {
+  color: #b6b6b6;
+  font-size: .14rem;
+  margin-top: 3px;
+}
+
+.intel-search-wrap .intel-search-box .intel-search-content .fun-list .fun-item:first-child {
+  margin-left: 0;
+}
+
+.recommend-shops {
+  margin-top: .28rem;
+  padding: .1rem .15rem;
+  box-sizing: border-box;
+}
+
+.recommend-shops h3 {
+  font-size: .16rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+.recommend-shops .shop-list {
+  width: 100%;
+  margin-top: .2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recommend-shops .shop-list a {
+  flex-shrink: 0;
+  width: 47%;
+  height: auto;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 2px #eee;
+}
+
+.recommend-shops .shop-list a:nth-child(odd) {
+  margin-right: .15rem;
+}
+
+.recommend-shops .shop-list a dl {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommend-shops .shop-list a dl dt {
+  width: 100%;
+  margin-bottom: .1rem;
+  text-align: center;
+}
+
+.recommend-shops .shop-list a dl dt img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.recommend-shops .shop-list a dl dd {
+  padding: .1rem;
+}
+
+.recommend-shops .shop-list a dl dd .name {
+  font-size: .14rem;
+  color: #000;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.recommend-shops .shop-list a dl dd .dis-text {
+  color: #686868;
+  font-size: .12rem;
+  position: relative;
+}
+
+.recommend-shops .shop-list a dl dd .dis-text span {
+  position: absolute;
+  top: 0;
+  left: .8rem;
+  display: block;
+  width: .3rem;
+  height: .12rem;
+  line-height: .12rem;
+  color: #fff;
+  font-size: .1rem;
+  text-align: center;
+  background-color: #feaa30;
+}
+
+.recommend-shops .load {
+  font-size: .16rem;
+  color: #686868;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  height: .48rem;
+  border: 1px solid #eee;
+  background-color: #fff;
+}
+
+footer ul {
+  display: flex;
+  height: 100%;
+}
+
+footer ul li {
+  width: 25%;
+  line-height: .48rem;
+  text-align: center;
+}
+
+footer ul li i {
+  display: block;
+  font-size: 0.24rem !important;
+}
+
+footer ul .active {
+  color: #feaa30;
+}

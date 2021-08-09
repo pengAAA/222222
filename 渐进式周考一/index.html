@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜秀云</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header>
+            <div class="search-wrap">
+                <i class="iconfont icon-fangdajing"></i>
+                <input type="text" placeholder="搜索花型、工艺" class="input-bar">
+
+            </div>
+        </header>
+        <div class="main">
+            <div class="container">
+                <div class="intel-search-wrap">
+                    <div class="intel-search-box">
+                        <div class="icon-search">
+                            <i class="iconfont icon-sheying11"></i>
+                            <h3>智能搜花型</h3>
+                        </div>
+                        <div class="intel-search-content">
+                            <ul class="fun-list">
+                                <li class="fun-item">
+                                    <div class="icon-item">
+                                        <img src="./images/icon-item.jpg" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <div class="title">发布求购</div>
+                                        <p>30秒发布信息</p>
+                                    </div>
+                                </li>
+                                <li class="fun-item">
+                                    <div class="icon-item">
+                                        <img src="./images/icon-item.jpg" alt="">
+                                    </div>
+                                    <div class="text">
+                                        <div class="title">发布求购</div>
+                                        <p>30秒发布信息</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="recommend-shops">
+                    <h3>推荐商品</h3>
+                    <div class="shop-list">
+                        <a href="javascript:;">
+                            <dl>
+                                <dt>
+                                    <img src="./images/shopImg.png" alt="">
+                                </dt>
+                                <dd>
+                                    <div class="name">珠片绣订花SX-1126</div>
+                                    <div class="dis-text">3D重手工 <span>现货</span></div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;">
+                            <dl>
+                                <dt>
+                                    <img src="./images/shopImg.png" alt="">
+                                </dt>
+                                <dd>
+                                    <div class="name">珠片绣订花SX-1126</div>
+                                    <div class="dis-text">3D重手工 <span>现货</span></div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;">
+                            <dl>
+                                <dt>
+                                    <img src="./images/shopImg.png" alt="">
+                                </dt>
+                                <dd>
+                                    <div class="name">珠片绣订花SX-1126</div>
+                                    <div class="dis-text">3D重手工 <span>现货</span></div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;">
+                            <dl>
+                                <dt>
+                                    <img src="./images/shopImg.png" alt="">
+                                </dt>
+                                <dd>
+                                    <div class="name">珠片绣订花SX-1126</div>
+                                    <div class="dis-text">3D重手工 <span>现货</span></div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;">
+                            <dl>
+                                <dt>
+                                    <img src="./images/shopImg.png" alt="">
+                                </dt>
+                                <dd>
+                                    <div class="name">珠片绣订花SX-1126</div>
+                                    <div class="dis-text">3D重手工 <span>现货</span></div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a href="javascript:;">
+                            <dl>
+                                <dt>
+                                    <img src="./images/shopImg.png" alt="">
+                                </dt>
+                                <dd>
+                                    <div class="name">珠片绣订花SX-1126</div>
+                                    <div class="dis-text">3D重手工 <span>现货</span></div>
+                                </dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="load">上拉加载更多</div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <ul class="icon-list">
+                <li class="icon-item active">
+                    <i class="iconfont icon-fangzi"></i>
+                </li>
+                <li class="icon-item">
+                    <i class="iconfont icon-liebiao"></i>
+                </li>
+                <li class="icon-item">
+                    <i class="iconfont icon-xiaoxi__fuzhi_fuzhi"></i>
+                </li>
+                <li class="icon-item">
+                    <i class="iconfont icon-Icon_wode--outline"></i>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="./utils/bscroll.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script>
+        let load = document.querySelector('.load');  // 获取上拉加载
+        let shopList = document.querySelector('.shop-list')
+        let BS = new BScroll('.main', {
+            scrollY: true,
+            click: true,
+            probeType: 3,
+            tap: 'tap',
+
+            pullUpLoad: {
+                threshold: 40,  // 上拉加载
+            }
+        })
+
+        BS.on('pullingUp', function () {
+            load.textContent = '正在加载';
+            ajax("get", "./js/JSON/data.json", {
+
+            }, function (data) {
+                // console.log(data)
+                setTimeout(function () {
+                    load.textContent = '下拉查看更多';
+                    renderUp(data.shopList);
+                    BS.finishPullUp();
+                    BS.refresh();
+                }, 1000)
+            })
+        })
+        function renderUp(data) {
+            // console.log(data)
+            shopList.innerHTML += data.map(function (val) {
+                return `
+                <a href="javascript:;">
+                        <dl>
+                            <dt>
+                                <img src="${val.src}" alt="">
+                            </dt>
+                            <dd>
+                                <div class="name">${val.name}</div>
+                                <div class="dis-text">${val.dis_word} <span>${val.more}</span></div>
+                            </dd>
+                        </dl>
+                    </a>
+                `
+            }).join("")
+        }
+
+        let inputBar = document.querySelector('.input-bar');
+        inputBar.onclick = function() {
+            location.href = './html/search.html'
+        }
+    </script>
+    <script src="./js/waterfall.js"></script>
+    <script>
+        var baseSize = 100;
+        var baseWidth = 375;
+        var clintWidth = window.innerWidth;
+        clintWidth = clintWidth > 750 ? 750 : clintWidth;
+        document.querySelector('html').style.fontSize = clintWidth / baseWidth * baseSize + 'px';
+        window.addEventListener('resize', function () {
+            document.querySelector('html').style.fontSize = clintWidth / baseWidth * baseSize + 'px';
+        })
+    </script>
+</body>
+
+</html>
